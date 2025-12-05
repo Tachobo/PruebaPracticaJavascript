@@ -1,4 +1,4 @@
-let inicial, vendida, recibida
+let inicial, vendida, recibida;
 while (true) {
 temporal = undefined;
 if (inicial == undefined){
