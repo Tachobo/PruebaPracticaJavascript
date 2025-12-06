@@ -7,6 +7,7 @@ import { ejecutarEjercicio3 } from './ejercicios/ejercicio3.js';
 import { ejecutarEjercicio4 } from './ejercicios/ejercicio4.js';
 import { ejecutarEjercicio5 } from './ejercicios/ejercicio5.js';
 import { ejecutarEjercicio6 } from './ejercicios/ejercicio6.js';
+import { ejecutarEjercicio7 } from './ejercicios/ejercicio7.js';
 
 
 console.clear()
@@ -17,6 +18,7 @@ console.log("3. Promedio");
 console.log("4. Orden productos");
 console.log("5. Validacion usuario");
 console.log("6. Nomina");
+console.log("7. Registro dinamico productos");
 console.log()
 let opcion = parseInt(prompt("Seleccione el número del ejercicio a ejecutar: "));
 console.log()
@@ -38,6 +40,9 @@ switch (opcion) {
         break;
     case 6:
         ejecutarEjercicio6();
+        break;
+    case 7:
+        ejecutarEjercicio7();
         break;
     default:
         console.log("Opción no válida");
