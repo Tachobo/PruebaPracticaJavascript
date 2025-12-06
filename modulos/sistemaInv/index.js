@@ -1,0 +1,1 @@
+export { procesarInventario, parseFecha} from './funcionesEjer17.js';
