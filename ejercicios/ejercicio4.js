@@ -1,9 +1,9 @@
-let cantidad = parseInt (prompt("Ingrese la cantidad de productos a evaluar"));
+let cantidad = parseInt (prompt("Ingrese la cantidad de productos a evaluar: "));
 let productos = [];
 
 for (let i = 1; i <= cantidad; i++){
-    let producto = prompt(`Ingrese el nombre del producto ${i}`);
-    let valor = parseFloat(prompt(`Ingrese el valor del producto ${i}`));
+    let producto = prompt(`Ingrese el nombre del producto ${i}: `);
+    let valor = parseFloat(prompt(`Ingrese el valor del producto ${i}: `));
     productos.push({producto, valor})
 }
 

@@ -1,8 +1,8 @@
-let cantidad = parseInt(prompt("Ingrese la cantidad de notas a evaluar"));
+let cantidad = parseInt(prompt("Ingrese la cantidad de notas a evaluar: "));
 let notas = [];
 
 for (let i = 1; i <= cantidad; i++) {
-    let nota = parseFloat(prompt(`Ingrese la nota ${i}`));
+    let nota = parseFloat(prompt(`Ingrese la nota ${i}: `));
     notas.push(nota);
 }
 
