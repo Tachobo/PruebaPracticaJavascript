@@ -1,0 +1,1 @@
+export * from './funcionesEjer8.js';
