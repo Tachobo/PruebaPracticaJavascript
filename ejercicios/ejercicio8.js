@@ -4,7 +4,7 @@ import { buscarCursos } from '../modulos/catalogo/index.js';
 
 
 export function ejecutarEjercicio8(){console.log("\nRegistro de cursos\n");
-
+console.log("\nCatalogo\n");
 let cantidad = parseInt(prompt("¿Cuántos cursos desea registrar?: "));
 let catalogo = [];
 

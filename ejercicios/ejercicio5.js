@@ -4,6 +4,7 @@ import { validarAcceso } from '../modulos/validar/index.js';
 const prompt = promptSync();
 
 export function ejecutarEjercicio5() {
+    console.log("\nValidacion usuario\n");
     const nombre = prompt("Ingrese su nombre de usuario: ");
     const estado = prompt("¿Cuál es su estado? (activo / inactivo): ");
     const rol = prompt("¿Cuál es su rol? (admin / editor / lector): ");

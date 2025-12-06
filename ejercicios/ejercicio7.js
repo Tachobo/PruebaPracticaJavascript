@@ -4,7 +4,7 @@ import { registrarProductos } from '../modulos/registro/index.js';
 const prompt = promptSync();
 
 export function ejecutarEjercicio7() {
-
+    console.log("\nRegistro dinamico de productos\n");
     let cantidad = parseInt(prompt("¿Cuántos productos desea registrar?: "));
     let productosIngresados = [];
 

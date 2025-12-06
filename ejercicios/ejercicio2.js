@@ -4,6 +4,7 @@ import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
 export function ejecutarEjercicio2(){
+console.log("\nInventario\n");
 let inicial, vendida, recibida, temporal;
 while (true) {
 temporal = undefined;

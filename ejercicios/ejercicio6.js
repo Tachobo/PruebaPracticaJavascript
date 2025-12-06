@@ -4,6 +4,7 @@ import { calcularSalarioBase, calcularDeducciones, calcularNeto  } from '../modu
 const prompt = promptSync();
 
 export function ejecutarEjercicio6(){
+    console.log("\nNomina\n");
     const valorHora = parseInt(prompt("Ingrese el valor de la hora: "));
 
     const horas = parseInt(prompt("Ingrese las horas trabajadas: "));

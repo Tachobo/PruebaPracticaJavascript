@@ -4,6 +4,7 @@ import { ordenAsc, ordenDesc } from '../modulos/productos/index.js';
 const prompt = promptSync();
 
 export function ejecutarEjercicio4(){
+console.log("\nOrden productos\n");
 let cantidad = parseInt (prompt("Ingrese la cantidad de productos a evaluar: "));
 let productos = [];
 
