@@ -1,0 +1,1 @@
+export * from './funcionesEjer12.js';
