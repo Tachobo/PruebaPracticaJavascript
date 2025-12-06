@@ -10,17 +10,19 @@ import { ejecutarEjercicio6 } from './ejercicios/ejercicio6.js';
 import { ejecutarEjercicio7 } from './ejercicios/ejercicio7.js';
 import { ejecutarEjercicio8 } from './ejercicios/ejercicio8.js';
 import { ejecutarEjercicio9 } from './ejercicios/ejercicio9.js';
+import { ejecutarEjercicio10 } from './ejercicios/ejercicio10.js';
 
 console.log("\nMENÚ DE EJERCICIOS\n");
-console.log("1. Validación Asistencia");
-console.log("2. Inventario");
-console.log("3. Promedio");
-console.log("4. Orden productos");
-console.log("5. Validacion usuario");
-console.log("6. Nomina");
-console.log("7. Registro dinamico productos");
-console.log("8. Catalogo");
-console.log("9. Procesamiento de pagos");
+console.log(" 1. Validación Asistencia");
+console.log(" 2. Inventario");
+console.log(" 3. Promedio");
+console.log(" 4. Orden productos");
+console.log(" 5. Validacion usuario");
+console.log(" 6. Nomina");
+console.log(" 7. Registro dinamico productos");
+console.log(" 8. Catalogo");
+console.log(" 9. Procesamiento de pagos");
+console.log("10. Fusion de usuarios");
 console.log()
 let opcion = parseInt(prompt("Seleccione el número del ejercicio a ejecutar: "));
 console.log()
@@ -60,6 +62,10 @@ switch (opcion) {
     case 9:
         console.clear()
         ejecutarEjercicio9();
+        break;
+    case 10:
+        console.clear()
+        ejecutarEjercicio10();
         break;
     default:
         console.log("Opción no válida");
