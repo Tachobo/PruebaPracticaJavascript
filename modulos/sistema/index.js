@@ -1,0 +1,1 @@
+export { generarRecomendaciones } from './funcionesEjer15.js';
