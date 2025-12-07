@@ -1,6 +1,7 @@
+//se import 
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
-
+//se importan las ejecuciones de los ejercicios para usarlas en el menu
 import { ejecutarEjercicio1 } from './ejercicios/ejercicio1.js';
 import { ejecutarEjercicio2 } from './ejercicios/ejercicio2.js';
 import { ejecutarEjercicio3 } from './ejercicios/ejercicio3.js';
@@ -18,7 +19,7 @@ import { ejecutarEjercicio14 } from './ejercicios/ejercicio14.js';
 import { ejecutarEjercicio15 } from './ejercicios/ejercicio15.js';
 import { ejecutarEjercicio16 } from './ejercicios/ejercicio16.js';
 import { ejecutarEjercicio17 } from './ejercicios/ejercicio17.js';
-
+//se creo las opciones del menu
 console.log("\nMENÚ DE EJERCICIOS\n");
 console.log(" 1. Validación Asistencia");
 console.log(" 2. Inventario");
@@ -36,10 +37,12 @@ console.log("13. Control de gastos");
 console.log("14. Evaluación de proyectos");
 console.log("15. Sistema inteligente cursos");
 console.log("16. Sistema de alerta");
-console.log("17. Sistema control inventarios");
-console.log()
+console.log("17. Sistema control inventarios\n");
+//Se pide el ingreso del ejercicio que se desea ejecutar
 let opcion = parseInt(prompt("Seleccione el número del ejercicio a ejecutar: "));
+//se añade un console log vacio, para que deje un espacio
 console.log()
+//se creo el menu para que la persona elija que ejercicio ejecutar
 switch (opcion) {
     case 1:
         console.clear()
