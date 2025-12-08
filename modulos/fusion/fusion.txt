@@ -1,0 +1,45 @@
+Ejercicio 10: Fusión de usuarios con operador spread
+
+Entradas:
+
+Arreglo de usuarios del sistema A (documento, nombre, correo).
+
+Arreglo de usuarios del sistema B (documento, nombre, telefono).
+
+Proceso:
+El programa solicita los datos de los usuarios de ambos sistemas y los almacena en dos arreglos. Luego se llama a la función 
+fusionarUsuarios(usuariosA, usuariosB), la cual combina ambos arreglos usando el operador spread ([...]). Se recorre el arreglo 
+combinado y, para cada usuario, se verifica si ya existe un usuario con el mismo documento en el arreglo depurado usando find().
+
+Si no existe, se agrega directamente.
+
+Si existe, se compara la cantidad de campos con información (undefined o vacíos no cuentan) y se mantiene la versión más completa.
+
+Salidas:
+
+Lista de usuarios fusionada y depurada, donde cada documento aparece una sola vez con la información más completa.
+
+Se imprime en consola la lista final.
+
+Reglas de negocio:
+
+No puede haber usuarios duplicados por documento.
+
+Se prioriza la versión con más campos llenos si hay duplicados.
+
+Se conserva toda la información disponible sin perder datos.
+
+Casos límite:
+
+Usuarios con todos los campos vacíos o undefined.
+
+Usuarios con campos parcialmente llenos en ambos sistemas.
+
+Ambos sistemas con usuarios duplicados.
+
+Decisiones de diseño justificadas:
+
+Se utiliza el operador spread ([...]) para unir los arreglos de manera rápida y clara, manteniendo la inmutabilidad de los arreglos originales.
+
+Se aplica find() y filter() para identificar duplicados y comparar campos, asegurando que la versión más completa de cada usuario 
+se conserve, lo que simplifica la lógica de depuración y evita pérdidas de información.

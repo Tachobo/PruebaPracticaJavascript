@@ -1,51 +1,35 @@
-// Importamos la función 'validar' desde el módulo de asistencia.
-// Esta función será la encargada de verificar si un aprendiz está en la lista.
-import { validar } from '../modulos/asistencia/index.js';
-
-// Importamos la librería 'prompt-sync' para poder capturar entradas del usuario por consola.
-// Se usa porque en Node.js no existe un método nativo para leer datos sincrónicamente.
+/* Se importa la librería prompt-sync para poder solicitar datos al usuario por consola,
+esto se hace así porque Node.js no permite capturar entradas de forma directa */
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
-/*
-Función principal: ejecutarEjercicio1
-Responsabilidad: gestionar el flujo de validación de asistencia.
-- Muestra un título en consola.
-- Solicita al usuario la cantidad de aprendices.
-- Registra los nombres de los aprendices en un arreglo.
-- Pide un nombre específico para evaluar su asistencia.
-Llama a la función 'validar' para comprobar si el aprendiz está en la lista.
-*/
+/* Se importa la función validar desde el módulo de asistencia, esta función será
+la encargada de comprobar si un nombre se encuentra dentro de la lista de aprendices */
+import { validar } from '../modulos/asistencia/index.js';
+
+/* Función principal que se exporta para ser usada desde el archivo app.js en el menu,
+esta función controla todo el flujo del programa, pide los datos al usuario,
+los almacena y finalmente llama a la función que valida la asistencia */
 export function ejecutarEjercicio1() {
     console.log("\nValidación Asistencia\n");
 
-    // Capturamos la cantidad de aprendices que se van a registrar.
-    // Se convierte a número entero porque prompt devuelve texto.
+    // Se pide la cantidad de aprendices y se convierte a entero porque el prompt devuelve texto
     let cantidad = parseInt(prompt("Ingrese la cantidad de aprendices: "));
 
-    // Creamos un arreglo vacío donde se almacenarán los nombres de los aprendices.
+    // Se crea un arreglo vacío para guardar los nombres de los aprendices
     const aprendices = [];
 
-    // Bucle para registrar cada aprendiz según la cantidad indicada.
-    // Se diseñó así porque permite capturar dinámicamente los nombres.
+    /* Se usa un ciclo for para pedir los nombres de los aprendices uno por uno,
+    este diseño permite repetir el proceso según la cantidad indicada por el usuario */
     for (let i = 0; i < cantidad; i++) {
         let aprendiz = prompt("Ingrese el nombre del estudiante: ");
         aprendices.push(aprendiz);
     }
 
-    // Solicitamos el nombre del aprendiz que se desea evaluar.
+    // Se solicita el nombre que se desea buscar dentro de la lista
     let nombre = prompt("Ingrese el nombre a evaluar: ");
 
-    /*
-    Callback: validar(aprendices, nombre)
-    Parámetros:
-    - aprendices: arreglo con los nombres registrados.
-    - nombre: cadena con el aprendiz a verificar.
-    Retorno:
-    - Generalmente devuelve un mensaje o resultado indicando si el aprendiz está presente.
-    Responsabilidad:
-    - Encargado de comprobar si el nombre ingresado existe dentro del arreglo de aprendices.
-    - Forma parte del flujo de validación de asistencia.
-    */
+    /* Se llama a la función validar, está función recibe como argumentos el arreglo aprendices
+    y el nombre que se desea buscar*/
     validar(aprendices, nombre);
 }

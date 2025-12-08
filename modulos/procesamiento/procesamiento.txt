@@ -1,0 +1,45 @@
+Ejercicio 9: Procesamiento de pagos mediante callbacks
+
+Entradas:
+
+Cantidad de pagos a registrar.
+
+Datos de cada pago: id, monto y método de pago.
+
+Regla de aprobación definida por el usuario (opción 1–4).
+
+Proceso:
+El programa solicita los datos de cada pago y los almacena en un arreglo. Luego, según la opción seleccionada, se define una 
+función callback que determina si un pago cumple la condición de aprobación. La función procesarPagos(pagos, callback) 
+recorre el arreglo usando map(), aplica el callback a cada pago y genera un nuevo arreglo donde se agrega la propiedad 
+estado como "Aprobado" o "Rechazado". Finalmente, se muestran los pagos aprobados y rechazados usando filter() sobre el resultado.
+
+Salidas:
+
+Arreglo con todos los pagos, indicando su estado de aprobación.
+
+Listado en consola de pagos aprobados y pagos rechazados.
+
+Reglas de negocio:
+
+La aprobación depende de la regla definida por el usuario.
+
+El pago se marca como "Aprobado" únicamente si el callback retorna true.
+
+Todas las decisiones se registran sin alterar los datos originales del pago.
+
+Casos límite:
+
+Pagos con monto igual al mínimo establecido.
+
+Pagos con métodos de pago no contemplados.
+
+Reglas no válidas (se rechazan todos los pagos).
+
+Decisiones de diseño justificadas:
+
+Se utiliza map() para crear un nuevo arreglo con los resultados de la evaluación, manteniendo inmutable el arreglo original y 
+facilitando el seguimiento de cada pago.
+
+Se emplea un callback flexible para definir las reglas de aprobación, permitiendo cambiar la lógica sin modificar la función 
+procesarPagos, promoviendo modularidad y reutilización.

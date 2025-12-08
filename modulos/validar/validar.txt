@@ -1,0 +1,46 @@
+Ejercicio 5: Validación de usuario y permisos
+
+Entradas:
+
+Nombre del usuario (cadena de texto).
+
+Estado del usuario (activo/inactivo).
+
+Rol del usuario (admin, editor o lector).
+
+Proceso:
+El programa solicita los datos del usuario y los normaliza (convierte a minúsculas y elimina espacios) para asegurar comparaciones confiables. 
+La función validarAcceso() recibe el nombre, estado y rol, y evalúa si el usuario está activo y qué permisos le corresponden según su rol. 
+Se asigna un objeto con accesoPermitido (booleano) y permisos (descripción textual). Finalmente, se muestra un mensaje de bienvenida o de 
+acceso denegado según el resultado.
+
+Salidas:
+
+Mensaje indicando si el acceso está permitido o denegado.
+
+Descripción de los permisos asignados al usuario según su rol.
+
+Reglas de negocio:
+
+Solo los usuarios activos pueden acceder.
+
+Roles reconocidos: admin (acceso total), editor (acceso parcial), lector (solo lectura).
+
+Cualquier rol no listado o estado inactivo resulta en acceso denegado.
+
+Casos límite:
+
+Usuario con rol no reconocido.
+
+Estado vacío o mal escrito.
+
+Nombres con espacios o mayúsculas distintas.
+
+Usuarios activos con permisos mínimos o nulos.
+
+Decisiones de diseño justificadas:
+
+Se normalizan cadenas (estado y rol) para manejar inconsistencias en mayúsculas, minúsculas y espacios, asegurando comparaciones robustas.
+
+Se devuelve un objeto con dos propiedades (accesoPermitido y permisos) para separar la lógica de validación del flujo de presentación, 
+lo que permite reutilizar la función y facilita pruebas unitarias.

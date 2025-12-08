@@ -1,0 +1,61 @@
+Ejercicio 13: Control de gastos y análisis financiero
+
+Entradas:
+
+Arreglo gastos donde cada elemento es un objeto con las propiedades: categoria y monto.
+
+Datos ingresados por el usuario a través de consola (prompt-sync).
+
+Proceso:
+
+El programa solicita al usuario la cantidad de gastos a registrar y los datos de cada uno (categoría y monto).
+
+Cada gasto se almacena como un objeto dentro de un arreglo gastos.
+
+Se llama a la función analizarGastos(gastos), la cual:
+
+Calcula el total gastado usando reduce para sumar todos los montos.
+
+Crea un objeto categorias donde se acumula el monto total por cada categoría.
+
+Identifica la categoría más costosa comparando los totales de cada categoría.
+
+Genera un arreglo de alertas si alguna categoría representa más del 40% del gasto total, indicando posibles desbalances financieros.
+
+Salidas:
+
+Objeto reporte que contiene:
+
+total: el monto total gastado.
+
+categoriaMasCostosa: la categoría con mayor gasto acumulado.
+
+alertas: un arreglo con mensajes de alerta si alguna categoría supera el 40% del total.
+
+Se muestran en consola el total, la categoría más costosa y las alertas.
+
+Si no hay alertas, se indica que no hay desbalances detectados.
+
+Reglas de negocio:
+
+Se considera un desbalance financiero si una categoría representa más del 40% del gasto total.
+
+Todas las categorías se consideran, independientemente del orden de entrada.
+
+Casos límite:
+
+Ningún gasto registrado (arreglo vacío).
+
+Una sola categoría que supere el 40% del total.
+
+Montos negativos o cero (si no hay validación explícita, se suman tal cual).
+
+Decisiones de diseño justificadas:
+
+Uso de reduce para calcular el total de manera eficiente.
+
+Uso de Object.entries para iterar sobre categorías y determinar la más costosa y las alertas.
+
+Devuelve un objeto estructurado con toda la información para mantener el flujo limpio y fácil de usar.
+
+Separación clara entre registro de gastos y análisis financiero, facilitando mantenimiento y escalabilidad.

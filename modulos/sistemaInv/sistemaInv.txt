@@ -1,0 +1,105 @@
+Ejercicio 17: Sistema de control de inventarios dinámicos
+
+Entradas:
+
+Arreglo inventario, donde cada producto es un objeto con las propiedades:
+
+id (number): identificador único del producto.
+
+nombre (string): nombre del producto.
+
+categoria (string): categoría a la que pertenece.
+
+stock (number): cantidad disponible en inventario.
+
+precio (number): precio unitario del producto.
+
+perecedero (boolean): indica si el producto es perecedero.
+
+fechaVencimiento (Date|null): fecha de vencimiento si es perecedero, o null si no lo es.
+
+Datos ingresados por consola (prompt-sync).
+
+Proceso:
+
+Se solicita al usuario la cantidad de productos a registrar y se capturan los datos de cada producto.
+
+Si el producto es perecedero, se pide la fecha de vencimiento y se convierte a objeto Date usando parseFecha.
+
+Se define un callback reglaControl que determina la acción a realizar con cada producto según reglas:
+
+"retirar" → stock 0 o producto perecedero vencido.
+
+"vigilar" → stock menor a 5.
+
+"ajustar precio" → producto perecedero con vencimiento ≤ 3 días.
+
+"estable" → resto de casos.
+
+La función procesarInventario aplica el callback a cada producto, generando un nuevo arreglo con la acción asignada.
+
+Se crean subreportes:
+
+clasificadosPorAccion: productos agrupados según la acción que requieren.
+
+proximosAVencer: productos perecederos con vencimiento dentro del umbral definido (por defecto 15 días).
+
+mayorStock y menorStock: productos con mayor y menor cantidad en stock.
+
+resumenCategorias: cantidad de productos por cada categoría.
+
+valorTotal: suma total del inventario (precio * stock).
+
+Salida:
+
+Objeto informe con múltiples propiedades:
+
+productosConAccion       (todos los productos con la acción sugerida)
+clasificadosPorAccion    (productos agrupados por acción)
+proximosAVencer          (perecederos próximos a vencer)
+mayorStock               (producto con mayor stock)
+menorStock               (producto con menor stock)
+resumenCategorias        (resumen por categoría)
+valorTotal               (valor total del inventario)
+
+
+
+Cada lista contiene los productos clasificados con toda su información relevante.
+
+Reglas de negocio:
+
+Productos con stock 0 deben retirarse del inventario.
+
+Productos perecederos próximos a vencer deben ajustarse o retirarse según días restantes.
+
+Productos con stock bajo deben vigilarse.
+
+Clasificación flexible mediante callback reglaControl, que permite modificar las reglas sin alterar la lógica principal.
+
+Decisiones de diseño:
+
+Uso de callback para separar la lógica de decisión de la función de procesamiento.
+
+Funciones auxiliares:
+
+parseFecha → convierte fechas en string a objeto Date.
+
+diasHasta → calcula días restantes hasta una fecha determinada.
+
+Agrupación y reportes:
+
+reduce para clasificar por acción y resumir por categoría.
+
+filter y map para seleccionar y enriquecer los productos perecederos próximos a vencer.
+
+Preservación de datos originales:
+
+Cada producto conserva sus propiedades originales al agregar información calculada (accion, diasRestantes).
+
+Casos límite:
+
+Inventario vacío → listas vacías, valor total 0.
+
+Todos los productos no perecederos → proximosAVencer vacío.
+
+Productos con vencimiento negativo → se consideran vencidos y se retiran.

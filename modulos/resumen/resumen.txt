@@ -1,0 +1,46 @@
+Ejercicio 11: Resumen de mensajes
+
+Entradas:
+
+Objeto mensaje con las propiedades: remitente, contenido y fecha.
+
+Datos capturados desde consola por el usuario.
+
+Proceso:
+El programa solicita los datos del mensaje y los guarda en un objeto. Luego se llama a la función generarResumen(mensaje), la cual:
+
+Desestructura el objeto para obtener remitente, contenido y fecha.
+
+Evalúa la longitud del contenido.
+
+Si el contenido supera los 30 caracteres, se toma un fragmento de los primeros 30 caracteres y se agrega "..." para indicar truncamiento.
+
+Si tiene 30 o menos caracteres, se mantiene completo.
+
+Devuelve un nuevo objeto que conserva remitente y fecha, pero con el contenido resumido.
+
+Salidas:
+
+Objeto resumen con la misma estructura del mensaje original pero con el contenido abreviado si era muy largo.
+
+Se imprime en consola un resumen del mensaje mostrando remitente, contenido (posiblemente truncado) y fecha.
+
+Reglas de negocio:
+
+Mostrar únicamente un resumen del contenido para evitar mensajes demasiado largos en pantalla.
+
+Mantener intactos remitente y fecha para preservar la información esencial.
+
+Casos límite:
+
+Contenido exactamente de 30 caracteres (no se trunca).
+
+Contenido vacío (se mostrará como vacío en el resumen).
+
+Decisiones de diseño justificadas:
+
+Se utiliza desestructuración (const { remitente, contenido, fecha } = mensaje) para hacer el código más legible y directo.
+
+Se aplica slice para truncar el contenido de forma segura y clara, agregando puntos suspensivos para indicar que fue resumido.
+
+La función devuelve un nuevo objeto en lugar de modificar el original, preservando la inmutabilidad de los datos de entrada.

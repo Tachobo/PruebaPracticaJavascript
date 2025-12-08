@@ -1,0 +1,44 @@
+Ejercicio 8: Búsqueda avanzada en un catálogo usando callbacks
+
+Entradas:
+
+Cantidad de cursos a registrar.
+
+Datos de cada curso: nombre, categoría y duración.
+
+Categoría a buscar ingresada por el usuario.
+
+Proceso:
+El programa solicita al usuario la cantidad de cursos y los datos de cada uno, almacenándolos en un arreglo catalogo. Luego, 
+se pide la categoría a buscar. Se llama a la función buscarCursos(catalogo, callback), la cual usa el método filter() y recibe 
+un callback que compara la categoría de cada curso con la categoría buscada. El callback devuelve true si coincide y false si no, 
+filtrando así los cursos correspondientes. Finalmente, los cursos filtrados se muestran en consola.
+
+Salidas:
+
+Arreglo con los cursos que coinciden con la categoría buscada.
+
+Lista mostrada en consola con los resultados de la búsqueda.
+
+Reglas de negocio:
+
+La búsqueda debe ser insensible a mayúsculas y minúsculas.
+
+Solo se incluyen cursos cuya categoría coincida exactamente con la búsqueda.
+
+La función buscarCursos debe ser reutilizable para distintos criterios, cambiando únicamente el callback.
+
+Casos límite:
+
+Ingreso de categorías con diferentes combinaciones de mayúsculas y minúsculas.
+
+Catálogo vacío.
+
+Categoría buscada que no exista en ningún curso.
+
+Decisiones de diseño justificadas:
+
+Se utiliza filter() en lugar de for para simplificar el filtrado y aprovechar la capacidad de pasar un callback, haciendo el código más limpio y modular.
+
+Se implementa un callback para permitir flexibilidad: el criterio de búsqueda puede cambiar sin modificar la función principal, promoviendo 
+reutilización y escalabilidad del módulo.

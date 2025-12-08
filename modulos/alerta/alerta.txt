@@ -1,0 +1,91 @@
+Ejercicio 16: Sistema de alerta temprana de usuarios
+
+Entradas:
+
+Arreglo usuarios, donde cada usuario es un objeto con las propiedades:
+
+id (number): identificador único del usuario.
+
+nombre (string): nombre del usuario.
+
+publicaciones (array de strings): lista de publicaciones realizadas por el usuario.
+
+reportes (array de strings): lista de reportes recibidos sobre el usuario.
+
+fechaRegistro (Date): fecha en la que se registró el usuario.
+
+estado (string): indica si el usuario está activo o inactivo.
+
+Datos ingresados por consola (prompt-sync).
+
+Proceso:
+
+Se solicita al usuario la cantidad de usuarios a registrar y se capturan todos sus datos: publicaciones, reportes, fecha de registro y estado.
+
+Se define un callback criterioAnalisis que evalúa el nivel de riesgo de cada usuario según reglas:
+
+Nivel 3: más de 5 reportes → riesgo medio.
+
+Nivel 4: publicaciones que contienen la palabra “inapropiada” → riesgo alto.
+
+Nivel 5: usuario registrado hace menos de 30 días con reportes → riesgo crítico.
+
+Nivel 0: sin riesgo.
+
+Devuelve un objeto { sospechoso, nivel, motivo } donde:
+
+sospechoso (boolean): indica si el usuario es considerado sospechoso.
+
+nivel (number): valor numérico del nivel de riesgo.
+
+motivo (string): explicación del riesgo.
+
+La función analizarUsuarios aplica el callback a cada usuario usando map, generando un nuevo arreglo con los datos originales y el análisis de riesgo.
+
+Los usuarios se clasifican según su nivel de riesgo:
+
+bajo: nivel 0 a 2.
+
+medio: nivel 3.
+
+alto: nivel 4 o mayor.
+
+Se muestra en consola un informe de riesgo con los usuarios agrupados por bajo, medio y alto riesgo, indicando el nombre y motivo de cada uno.
+
+Salida:
+
+Objeto informe con tres listas:
+
+bajo
+medio
+alto
+
+
+Cada lista contiene los usuarios clasificados según el análisis realizado por el callback.
+
+Reglas de negocio:
+
+Los usuarios nuevos con reportes tienen prioridad de riesgo alta.
+
+Publicaciones inapropiadas elevan significativamente el nivel de riesgo.
+
+Usuarios con pocos reportes o comportamiento normal son clasificados como bajo riesgo.
+
+Decisiones de diseño justificadas:
+
+Uso de callback (criterioAnalisis) para separar la lógica de análisis de la función de procesamiento, permitiendo modificar las 
+reglas de riesgo sin tocar la función principal.
+
+Uso de map para combinar los datos originales del usuario con los resultados del análisis, generando un nuevo objeto sin modificar los datos originales.
+
+Filtrado por nivel de riesgo usando filter, permitiendo agrupar los usuarios en categorías fácilmente visualizables.
+
+La fecha de registro se convierte a Date para calcular el tiempo de antigüedad y detectar usuarios recientes con riesgo.
+
+Casos límite:
+
+No hay usuarios registrados → se devuelve listas vacías para cada nivel.
+
+Todos los usuarios activos y sin reportes → todos aparecen en la categoría de bajo riesgo.
+
+Usuarios con múltiples criterios de riesgo → se toma el nivel más alto para determinar la clasificación.

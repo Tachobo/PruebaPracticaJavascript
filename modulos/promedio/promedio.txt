@@ -1,0 +1,45 @@
+Ejercicio 3: Análisis de calificaciones de un aprendiz
+
+Entradas:
+
+Cantidad de notas a evaluar (número entero).
+
+Cada una de las notas (número decimal o entero).
+
+Proceso:
+El programa solicita la cantidad de notas y luego cada nota individual, almacenándolas en un arreglo. La función calcularPromedio() 
+recibe este arreglo y recorre cada nota usando un ciclo for para sumar todas las notas y calcular el promedio. Posteriormente, 
+se evalúa el promedio para determinar la categoría de rendimiento: Alto, Medio o Bajo, según rangos predefinidos. El promedio 
+se muestra con dos decimales usando .toFixed(2).
+
+Salidas:
+
+Promedio final de las notas.
+
+Rendimiento del aprendiz (Alto, Medio, Bajo).
+
+Reglas de negocio:
+
+Rendimiento Alto si promedio ≥ 4.0.
+
+Rendimiento Medio si promedio está entre 3.0 y 3.99.
+
+Rendimiento Bajo si promedio < 3.0.
+
+Se consideran todas las notas ingresadas; no se ignoran valores extremos ni duplicados.
+
+Casos límite:
+
+Cantidad de notas igual a cero (arreglo vacío).
+
+Notas fuera del rango esperado (mayores a 5 o menores a 0).
+
+Notas decimales o números muy pequeños.
+
+Decisiones de diseño justificadas:
+
+Se usa un ciclo for en lugar de reduce para sumar las notas por claridad y facilidad de comprensión, especialmente útil para aprendices 
+que revisen el código.
+
+La función calcularPromedio() está separada de la interacción con el usuario, permitiendo reutilizarla en otros módulos o hacer pruebas 
+unitarias fácilmente.

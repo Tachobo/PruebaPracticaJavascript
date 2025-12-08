@@ -1,0 +1,57 @@
+Ejercicio 12: Gestión de pacientes por prioridad
+
+Entradas:
+
+Arreglo pacientes donde cada elemento es un objeto con las propiedades: nombre, edad y prioridad.
+
+Datos ingresados por el usuario a través de consola (prompt-sync).
+
+Proceso:
+
+El programa solicita al usuario la cantidad de pacientes a registrar y sus datos: nombre, edad y prioridad.
+
+Cada paciente se almacena como un objeto dentro de un arreglo pacientes.
+
+Se llama a la función seleccionarPaciente(pacientes), la cual:
+
+Verifica si el arreglo está vacío y retorna null si no hay pacientes.
+
+Ordena el arreglo usando sort con una función callback que:
+
+Compara primero la propiedad prioridad de mayor a menor (b.prioridad - a.prioridad).
+
+Si la prioridad es igual, compara la propiedad edad de mayor a menor (b.edad - a.edad) para desempatar.
+
+Devuelve el primer elemento del arreglo ordenado, que corresponde al paciente con mayor prioridad (y mayor edad en caso de empate).
+
+Salidas:
+
+Objeto seleccionado que contiene el paciente con mayor prioridad.
+
+Se imprime en consola el nombre, edad y prioridad del paciente seleccionado.
+
+Si no hay pacientes, se muestra un mensaje indicando que no hay registros.
+
+Reglas de negocio:
+
+La prioridad más alta se determina por el valor numérico mayor.
+
+En caso de empate de prioridad, gana el paciente de mayor edad.
+
+Si no hay pacientes, no se selecciona ninguno.
+
+Casos límite:
+
+Ningún paciente registrado (arreglo vacío).
+
+Dos o más pacientes con la misma prioridad y edad.
+
+Prioridad ingresada como números negativos o cero (si no hay validación explícita, se aceptan tal cual).
+
+Decisiones de diseño justificadas:
+
+Se utiliza sort con callback para ordenar de manera flexible según prioridad y edad.
+
+Retorna directamente pacientes[0] después de ordenar, garantizando selección rápida y precisa.
+
+Maneja la ausencia de pacientes retornando null, evitando errores de acceso a propiedades.

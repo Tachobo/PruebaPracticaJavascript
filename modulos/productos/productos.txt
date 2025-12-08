@@ -1,0 +1,46 @@
+Ejercicio 4: Ordenamiento de precios de productos
+
+Entradas:
+
+Cantidad de productos a evaluar (número entero).
+
+Nombre y valor de cada producto (cadena y número decimal).
+
+Proceso:
+El programa solicita los datos de los productos al usuario, construyendo un arreglo de objetos {producto, valor}. Para ordenar los productos, 
+se usan dos funciones: ordenAsc() y ordenDesc(). ordenAsc() usa la función compare() como callback para sort(), que compara los valores y 
+define si un elemento va antes o después, devolviendo -1, 1 o 0 según corresponda. ordenDesc() utiliza un callback inline que 
+resta b.valor - a.valor para invertir el orden. Se crea una copia del arreglo original antes de ordenar descendente para no modificar 
+los datos originales. Finalmente, se imprime el arreglo ordenado y los valores extremos (menor y mayor).
+
+Salidas:
+
+Arreglo ordenado de menor a mayor.
+
+Arreglo ordenado de mayor a menor.
+
+Producto con menor valor y producto con mayor valor para cada ordenamiento.
+
+Reglas de negocio:
+
+Los productos se ordenan únicamente por su valor numérico.
+
+Para valores iguales, el orden relativo se mantiene según la función compare().
+
+Se preserva el arreglo original al ordenar descendente para evitar efectos colaterales.
+
+Casos límite:
+
+Arreglo vacío de productos.
+
+Productos con valores idénticos.
+
+Valores negativos o cero.
+
+Cantidad de productos igual a uno.
+
+Decisiones de diseño justificadas:
+
+Se implementa compare() como callback separado para el orden ascendente, mejorando claridad y permitiendo reutilización en otros contextos.
+
+Se crea una copia del arreglo antes de aplicar ordenDesc() para mantener inmutabilidad del arreglo original y evitar errores en análisis posteriores.

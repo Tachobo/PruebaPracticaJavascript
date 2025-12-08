@@ -1,0 +1,42 @@
+Ejercicio 7: Registro dinámico de productos usando parámetros rest
+
+Entradas:
+
+Nombres de múltiples productos ingresados por el usuario.
+
+Cantidad de productos a registrar.
+
+Proceso:
+El programa solicita al usuario la cantidad de productos y sus nombres. Cada nombre se guarda en un arreglo productosIngresados. 
+Luego se llama a la función registrarProductos() pasando los productos usando parámetros rest (...productosIngresados). Esta función 
+convierte los argumentos en un Set para eliminar duplicados y luego lo devuelve como un arreglo limpio, asegurando que la lista final 
+no contenga repetidos. Finalmente, se muestra la lista depurada en consola.
+
+Salidas:
+
+Arreglo de productos sin duplicados.
+
+Mensaje de lista final mostrada en consola.
+
+Reglas de negocio:
+
+Cada producto debe registrarse solo una vez.
+
+El orden original de ingreso se conserva en la medida de lo posible.
+
+Se aceptan múltiples productos usando parámetros rest para flexibilidad.
+
+Casos límite:
+
+Ingreso de productos con nombres idénticos en mayúsculas y minúsculas.
+
+Lista vacía de productos.
+
+Cantidad ingresada no numérica o negativa.
+
+Decisiones de diseño justificadas:
+
+Se usa un Set para eliminar duplicados automáticamente, evitando ciclos adicionales o condicionales complejos.
+
+Se implementan parámetros rest (...productos) para permitir que la función reciba un número indefinido de productos, aumentando la flexibilidad 
+y reutilización de la función en distintos contextos.

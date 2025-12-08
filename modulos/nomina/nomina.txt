@@ -1,0 +1,45 @@
+Ejercicio 6: Cálculo modular de nómina
+
+Entradas:
+
+Valor de la hora trabajada (número entero).
+
+Cantidad de horas trabajadas (número entero).
+
+Proceso:
+El programa solicita al usuario el valor por hora y las horas trabajadas. Luego, el cálculo se divide en tres funciones independientes: calcularSalarioBase() 
+multiplica horas por valor de la hora; calcularDeducciones() aplica un 15% de descuento sobre el salario base; calcularNeto() resta las 
+deducciones del salario base. Este diseño modular permite separar cada etapa del cálculo y facilita la reutilización o pruebas unitarias de cada función. 
+Finalmente, se muestra en consola el salario base, las deducciones y el salario neto.
+
+Salidas:
+
+Salario base.
+
+Total de deducciones.
+
+Salario neto.
+
+Reglas de negocio:
+
+El salario base se calcula multiplicando horas trabajadas por el valor de la hora.
+
+Las deducciones aplican un 15% del salario base.
+
+El salario neto se obtiene restando las deducciones del salario base.
+
+Casos límite:
+
+Horas trabajadas o valor por hora igual a cero.
+
+Valores negativos o no numéricos ingresados.
+
+Cálculos con decimales grandes.
+
+Decisiones de diseño justificadas:
+
+La nómina se calcula mediante funciones separadas (base, deducciones, neto) para lograr modularidad y facilitar pruebas unitarias o 
+reutilización en otros contextos.
+
+Las deducciones se calculan como un porcentaje fijo dentro de su propia función para mantener flexibilidad en caso de cambiar 
+la política de descuento sin afectar el resto del cálculo.

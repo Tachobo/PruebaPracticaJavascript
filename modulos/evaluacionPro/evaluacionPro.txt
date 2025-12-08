@@ -1,0 +1,76 @@
+Ejercicio 14: Evaluación de proyectos colaborativos
+
+Entradas:
+
+Arreglo proyectos, donde cada proyecto es un objeto con las propiedades:
+
+nombre (string): nombre del proyecto.
+
+activo (boolean): indica si el proyecto está en funcionamiento.
+
+participantes (array de strings): nombres de los integrantes del proyecto.
+
+duracionMeses (number): duración del proyecto en meses.
+
+entregables (array de strings): lista de entregables del proyecto.
+
+Datos ingresados por el usuario a través de consola (prompt-sync).
+
+Proceso:
+
+Se solicita al usuario la cantidad de proyectos a registrar y los datos de cada uno, incluyendo participantes y entregables.
+
+Cada proyecto se almacena como un objeto dentro de un arreglo proyectos.
+
+Se define un callback de evaluación (reglaEvaluacion) que aplica las reglas de negocio:
+
+Si la duración del proyecto es mayor a 6 meses → "Requiere refuerzo: duración excesiva".
+
+Si no tiene entregables → "Requiere refuerzo: sin entregables".
+
+Si tiene menos de 2 participantes → "Requiere refuerzo, pocos participantes".
+
+En caso contrario → "Estable".
+
+La función generarInforme procesa los proyectos activos:
+
+Filtra los proyectos activos usando filtrarActivos.
+
+Cuenta los participantes con contarParticipantes.
+
+Evalúa cada proyecto aplicando el callback mediante evaluarProyecto.
+
+Devuelve un nuevo arreglo con objetos que contienen nombre, participantes (cantidad) y estado del proyecto.
+
+Salidas:
+
+Arreglo de objetos informe, con la información resumida y evaluada de los proyectos activos:
+
+Se muestran en consola los proyectos activos, la cantidad de participantes y el estado según la evaluación.
+
+Reglas de negocio:
+
+Solo los proyectos activos se incluyen en el informe.
+
+Se consideran proyectos “en riesgo” si no cumplen alguna de las reglas definidas en el callback.
+
+El informe permite identificar rápidamente proyectos que requieren refuerzo o intervención.
+
+Decisiones de diseño justificadas:
+
+Uso de callback (reglaEvaluacion) para separar la lógica de evaluación de la generación del informe, lo que facilita cambios 
+futuros en las reglas sin modificar la estructura principal.
+
+Funciones auxiliares (filtrarActivos, contarParticipantes, evaluarProyecto) para mantener el código modular y legible.
+
+map se utiliza para crear un nuevo arreglo con información resumida, evitando modificar los objetos originales.
+
+Separación clara entre captura de datos, filtrado de activos y evaluación permite mantenimiento sencillo y escalabilidad.
+
+Casos límite:
+
+No hay proyectos registrados (arreglo vacío).
+
+Proyectos con 0 participantes o sin entregables.
+
+Todos los proyectos inactivos (el informe quedará vacío).

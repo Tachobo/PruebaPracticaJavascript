@@ -1,0 +1,46 @@
+Ejercicio 2: Actualización de inventario en tienda digital
+
+Entradas:
+
+Cantidad inicial de productos (número entero, ≥ 0).
+
+Cantidad vendida (número entero, ≥ 0).
+
+Cantidad recibida en reposición (número entero, ≥ 0).
+
+Proceso:
+El programa solicita los datos al usuario usando prompt-sync, asegurando que todos sean números válidos y no negativos 
+mediante un ciclo while que repite la captura hasta recibir datos correctos. La función calcularInventario() recibe 
+los tres valores y calcula el inventario final restando lo vendido a lo inicial y sumando lo recibido. El resultado se 
+evalúa para determinar el estado del inventario: si queda menos de 5 unidades, se marca como crítico; de lo contrario, se considera estable.
+
+Salidas:
+
+Inventario final actualizado.
+
+Mensaje indicando si el inventario está en estado crítico o estable.
+
+Reglas de negocio:
+
+No se aceptan valores negativos para ninguna entrada.
+
+Inventario crítico si queda menos de 5 unidades.
+
+Inventario estable si quedan 5 o más unidades.
+
+Casos límite:
+
+Cantidad inicial igual a cero.
+
+Cantidad vendida mayor que la inicial (se permite, da resultado negativo).
+
+Cantidad recibida cero o muy alta.
+
+Entradas no numéricas, vacías o inválidas.
+
+Decisiones de diseño justificadas:
+
+Se usa un ciclo while(true) para capturar y validar entradas de manera robusta, garantizando que el programa no continúe con datos inválidos.
+
+Se separa la función de cálculo calcularInventario() del flujo de interacción con el usuario, lo que permite 
+reutilizar la lógica en otros contextos y facilita pruebas unitarias.

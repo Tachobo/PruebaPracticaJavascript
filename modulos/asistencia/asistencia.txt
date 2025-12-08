@@ -1,0 +1,43 @@
+Ejercicio 1: Validación de asistencia en un curso
+
+Entradas:
+
+Cantidad de aprendices (número entero).
+
+Nombres de cada aprendiz (cadena de texto).
+
+Nombre a validar (cadena de texto).
+
+Proceso:
+El programa primero solicita al usuario la cantidad de aprendices y luego sus nombres, almacenándolos en un arreglo. 
+Posteriormente solicita el nombre que se desea verificar. La función validar() recorre el arreglo usando el método .some() 
+para comprobar si al menos un nombre coincide exactamente con el ingresado. Este método se eligió porque retorna true inmediatamente 
+al encontrar la primera coincidencia, optimizando la búsqueda. Se construye un mensaje según el resultado de la validación y se muestra por consola.
+
+Salidas:
+
+Mensaje que indica si el aprendiz está inscrito o no.
+
+Reglas de negocio:
+
+Solo se consideran nombres exactos, respetando mayúsculas y minúsculas.
+
+La búsqueda termina en cuanto se encuentra la primera coincidencia.
+
+Casos límite:
+
+Arreglo vacío de aprendices.
+
+Nombre ingresado que no está en la lista.
+
+Nombres duplicados en la lista.
+
+Diferencias de mayúsculas/minúsculas (no reconocidas como iguales).
+
+Decisiones de diseño justificadas:
+
+Se utiliza .some() en lugar de filter() o find() porque permite detener la búsqueda en cuanto se encuentra una coincidencia, 
+mejorando eficiencia para listas grandes.
+
+La validación se implementa en un módulo independiente y se llama desde la función principal ejecutarEjercicio1(), 
+separando la lógica de procesamiento de la interacción con el usuario y facilitando mantenimiento y pruebas.

@@ -1,0 +1,84 @@
+Ejercicio 15: Sistema inteligente de recomendación de cursos
+
+Entradas:
+
+Arreglo cursos, donde cada curso es un objeto con las propiedades:
+
+nombre (string): nombre del curso.
+
+calificacion (number, 0-5): calificación final obtenida en el curso.
+
+horas (number): cantidad de horas dedicadas al curso.
+
+intentos (number): número de veces que se ha intentado completar el curso.
+
+finalizado (boolean): indica si el curso fue finalizado (true) o no (false).
+
+Datos ingresados por el usuario a través de consola (prompt-sync).
+
+Proceso:
+
+Se solicita al usuario la cantidad de cursos completados y los datos de cada uno, almacenándolos en un arreglo cursos.
+
+Se define un callback criterioRecomendacion que determina la prioridad de recomendación de cada curso según reglas:
+
+prioridad = 3: calificación menor a 3 → requiere refuerzo.
+
+prioridad = 2: curso no finalizado.
+
+prioridad = 1: pocas horas (<10) pero buena calificación (>=4) → profundizar en el contenido.
+
+prioridad = 0: no requiere recomendación especial.
+
+La función generarRecomendaciones aplica el callback a cada curso:
+
+Calcula la prioridad.
+
+Genera un motivo explicativo de la recomendación usando la función auxiliar explicarMotivo.
+
+Filtra los cursos cuya prioridad es mayor a 0 (solo los recomendados).
+
+Ordena los cursos por prioridad descendente.
+
+Se muestra en consola la lista de cursos recomendados con todos sus detalles y el motivo.
+
+Salida:
+
+Arreglo de cursos recomendados, cada objeto contiene:
+
+nombre
+calificacion
+horas
+intentos
+finalizado
+prioridad
+motivo
+
+La lista se ordena de mayor a menor prioridad, mostrando primero los cursos que requieren acción urgente.
+
+Reglas de negocio:
+
+Solo se incluyen cursos cuya prioridad es mayor a 0.
+
+Las prioridades y motivos se asignan en función de calificación, finalización y dedicación.
+
+Se distingue entre cursos que necesitan refuerzo, retomarse o profundizar el contenido.
+
+Decisiones de diseño justificadas:
+
+Uso de callback (criterioRecomendacion) para separar la lógica de evaluación de la generación de recomendaciones, permitiendo 
+ajustes futuros sin modificar la función principal.
+
+Función explicarMotivo independiente para centralizar la generación de motivos según la prioridad y las características del curso.
+
+Uso de map para generar objetos nuevos sin modificar los originales, filter para mantener solo los cursos recomendados y sort para ordenar por prioridad.
+
+Presentación en consola clara y detallada, incluyendo todos los atributos relevantes del curso y la razón de la recomendación.
+
+Casos límite:
+
+Ningún curso registrado → se muestra mensaje indicando que no hay cursos recomendados.
+
+Todos los cursos finalizados con alta calificación → prioridad 0, no aparecen en recomendaciones.
+
+Cursos con calificación baja o no finalizados → prioridad alta, aparecen primero en la lista.

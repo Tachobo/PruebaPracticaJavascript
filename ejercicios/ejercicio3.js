@@ -1,8 +1,12 @@
+// Se importa la librería prompt-sync para poder capturar datos por consola
 import promptSync from 'prompt-sync';
+const prompt = promptSync();
+
+/* Se importa la función calcularPromedio desde el módulo promedio.
+Esta función será la encargada de calcular el promedio final con base en los datos ingresados.*/ 
 import { calcularPromedio } from '../modulos/promedio/index.js';
 
-const prompt = promptSync();
-/*Se encierra todo en una funcion principal que se exportara al app.js, se pide
+/*Se encierra todo en una funcion principal que se exportara e importara al app.js, se pide
 el ingreso de la cantidad de notas, se guarda en cantidad, se crea un arreglo vacio llamado
 notas, luego un ciclo for, dentro de ese ciclo se pide las notas individuales correspondientes
 a la cantidad de notas registradas anteriormente, esto se guarda en una variable llamada notas,
@@ -11,7 +15,6 @@ export function ejecutarEjercicio3(){
 console.log("\nPromedio\n");
 let cantidad = parseInt(prompt("Ingrese la cantidad de notas a evaluar: "));
 let notas = [];
-
 for (let i = 1; i <= cantidad; i++) {
     let nota = parseFloat(prompt(`Ingrese la nota ${i}: `));
     notas.push(nota);
